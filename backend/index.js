@@ -13,11 +13,11 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "*",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
-app.use("/api/auth", authRoute);
+app.use("/api", authRoute);
 
 app.get("/", (req, res) => {
   res.send("backend is running...");
